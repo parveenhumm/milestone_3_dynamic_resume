@@ -1,0 +1,104 @@
+/* Global Styles */
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Form Styles */
+#cv-form {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#resume-template {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid Layout for Resume Template */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.column1, .column2 {
+    padding: 10px;
+}
+
+.column1 img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Card Styles */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Additional Styles */
+#education-section, #work-section {
+    margin-bottom: 20px;
+}
+
+.edField, .weField {
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}

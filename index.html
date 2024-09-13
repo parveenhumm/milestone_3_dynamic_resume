@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container" id="cv-form">   
+  <h1>Resume Builder</h1>
+  <form id="resume-form">
+
+    <!-- Profile Picture -->
+    <label for="profile-picture">Select Your Profile Picture:</label>
+    <input type="file" id="imgField" accept="image/*"><br><br>
+
+    <!-- Personal Information -->
+    <h2>Personal Information</h2>
+    <div class="about">
+        <label for="nameField">Full Name</label>
+        <input type="text" id="nameField" placeholder="Enter your full name"><br><br>
+    
+        <label for="titleField">Job Title</label>
+        <input type="text" id="titleField" placeholder="Enter your job title"><br><br>
+    </div>
+
+    <div class="contact">
+        <label for="contactField">Contact Number</label>
+        <input type="text" id="contactField" placeholder="Enter your contact"><br><br>
+    
+        <label for="emailField">Email</label>
+        <input type="email" id="emailField" placeholder="Enter email" required><br><br>
+    
+        <label for="addressField">Address</label>
+        <textarea id="addressField" placeholder="City, Country" required></textarea><br><br>
+    </div>
+
+    <div class="links">
+        <label for="linkedinField">LinkedIn</label>
+        <input type="text" id="linkedinField" placeholder="Enter LinkedIn"> <br><br>
+
+        <label for="githubField">GitHub</label>
+        <input type="text" id="githubField" placeholder="Enter GitHub"> <br><br>
+    </div>
+    
+    <!-- Objective -->
+    <h2>Professional Information</h2>
+    <label for="objectiveField">Objective</label>
+    <textarea id="objectiveField" placeholder="Enter your objective" required></textarea><br><br>
+
+    <!-- Education -->
+    <h2>Education</h2>
+    <div id="education-section">
+      <div class="edField">
+        <label for="degreeField">Degree:</label>
+        <input type="text" id="degreeField" class="degreeField" required><br><br>
+
+        <label for="schoolField">School/University:</label>
+        <input type="text" id="schoolField" class="schoolField" required><br><br>
+      </div>
+      
+    </div>
+    <button type="button" id="add-education-button">Add Education</button><br><br>
+
+    <!-- Work Experience -->
+    <h2>Work Experience</h2>
+    <div id="work-section">
+      <div class="weField">
+        <label for="weJobField">Job Title</label>
+        <input type="text" id="weJobField" class="weJobField" required><br><br>
+
+        <label for="companyField">Company Name:</label>
+        <input type="text" id="companyField" class="companyField" required><br><br>
+      </div>
+      
+    </div>
+    <button type="button" id="add-work-button">Add Work Experience</button><br><br>
+    
+
+    <!-- Skills -->
+    <h2>Skills</h2>
+    <label for="skillsField">Skill</label>
+    <input id="skillsField" placeholder="Enter Skill" required><br><br>
+
+    <label for="subSkillField">Information / Sub-skills</label>
+    <textarea id="subSkillField" placeholder="Enter Information or Sub-skills" required></textarea><br><br>
+
+    <button type="button" onclick="generateCV()">Generate Resume</button>
+  </form>
+</div>
+
+<!-- Resume Template -->
+<div class="grid-container" id="resume-template" style="display: none;">
+    <div class="column1">
+        <!--First column-->
+        <img src="image.jpg" alt="profile" class="myimg" id="imgTemplate">
+
+        <div class="container">
+            <p id="nameT"></p>
+            <p id="phoneT"></p>
+            <p id="emailT"></p>
+            <p id="addressT"></p>
+
+            <hr>
+            <p> <a id="linkedT" href="">LinkedIn</a></p>
+            <p> <a id="githubT" href="">GitHub</a></p>
+        </div>
+
+        
+        <!-- Skills Section -->
+    <div class="card">
+     <div class="card-header">
+        <h3>Skills</h3>
+     </div>
+     <div class="card-body">
+        <ul id="skillsT"></ul>
+     </div>
+    </div>
+
+    </div>
+
+    <div class="column2">
+
+        <div class="name-position">
+            <h1 id="fullnameT"></h1>
+            <h2 id="jobtitleT"></h2>
+        </div>       
+        
+        <!-- Objective card-->
+        <div class="card">
+            <div class="card-header">
+                <h3>Objective</h3>
+            </div>
+            <div class="card-body">
+              <p id="objectiveT"></p>
+            </div>
+        </div>
+
+
+        <!--Work Experince-->
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Work Experience</h3>
+            </div>
+            <div class="card-body">
+
+                <ul id="weT">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Academic Qualification-->
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Academic Qualification</h3>
+            </div>
+            <div class="card-body">
+
+                <ul id="aqT">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        
+    </div>
+    <div class="container">
+            
+        <button onclick="printCV()" class="btn"> Print Resume</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
